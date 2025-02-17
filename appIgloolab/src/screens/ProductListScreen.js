@@ -25,7 +25,7 @@ const ProductListScreen = ({ navigation }) => {
       });
       setProducts(response.data);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Error al obtener los productos:', error);
     }
   };
 
@@ -42,10 +42,10 @@ const ProductListScreen = ({ navigation }) => {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchProducts();
-      Alert.alert('Success', 'Product deleted');
+      Alert.alert('Success', 'Producto eliminado');
       setModalVisible(false);
     } catch (error) {
-      Alert.alert('Error', 'Failed to delete product');
+      Alert.alert('Error', 'Fallo al eliminar');
     }
   };
 
