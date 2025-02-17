@@ -78,10 +78,10 @@ const ProductListScreen = ({ navigation }) => {
       />
       <Modal isVisible={isModalVisible} style={styles.modal}>
         <View style={styles.modalContent}>
-          <Text style={styles.modalText}>Are you sure you want to delete {selectedProduct?.name}?</Text>
+          <Text style={styles.modalText}>Desea eliminar {selectedProduct?.name}?</Text>
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.confirmButton} onPress={() => handleDelete(selectedProduct.id)}>
-              <Text style={styles.buttonText}>Yes</Text>
+              <Text style={styles.buttonText}>Si</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.cancelButton} onPress={() => setModalVisible(false)}>
               <Text style={styles.buttonText}>No</Text>
