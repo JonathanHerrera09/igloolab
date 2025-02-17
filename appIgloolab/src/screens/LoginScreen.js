@@ -16,30 +16,30 @@ const LoginScreen = ({ navigation }) => {
       await AsyncStorage.setItem('token', response.data.token);
       navigation.navigate('Main');
     } catch (error) {
-      Alert.alert('Error', 'Invalid credentials');
+      Alert.alert('Error', 'credenciales invalidas');
     }
   };
 
   const handleRegister = async () => {
     try {
       await axios.post('http://localhost:3000/auth/register', { username, email, password });
-      Alert.alert('Success', 'Registration successful');
+      Alert.alert('Success', 'se registro');
       setIsRegistering(false);
     } catch (error) {
-      Alert.alert('Error', 'Registration failed');
+      Alert.alert('Error', 'registro fallido');
     }
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>{isRegistering ? 'Create Account' : 'Welcome Back!'}</Text>
+        <Text style={styles.title}>{isRegistering ? 'Crear cuenta' : 'Bienvenido!'}</Text>
         {isRegistering && (
           <View style={styles.inputContainer}>
             <Icon name="user" size={20} color="#999" style={styles.icon} />
             <TextInput
               style={styles.input}
-              placeholder="Username"
+              placeholder="Usuario"
               value={username}
               onChangeText={setUsername}
               autoCapitalize="none"
@@ -50,7 +50,7 @@ const LoginScreen = ({ navigation }) => {
           <Icon name="envelope" size={20} color="#999" style={styles.icon} />
           <TextInput
             style={styles.input}
-            placeholder="Email"
+            placeholder="Correo"
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
@@ -61,7 +61,7 @@ const LoginScreen = ({ navigation }) => {
           <Icon name="lock" size={20} color="#999" style={styles.icon} />
           <TextInput
             style={styles.input}
-            placeholder="Password"
+            placeholder="Contraseña"
             value={password}
             onChangeText={setPassword}
             secureTextEntry
@@ -69,15 +69,15 @@ const LoginScreen = ({ navigation }) => {
         </View>
         {isRegistering ? (
           <TouchableOpacity style={[styles.button, styles.registerButton]} onPress={handleRegister}>
-            <Text style={styles.buttonText}>Register</Text>
+            <Text style={styles.buttonText}>Registrar</Text>
           </TouchableOpacity>
         ) : (
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Login</Text>
+            <Text style={styles.buttonText}>Iniciar</Text>
           </TouchableOpacity>
         )}
         <TouchableOpacity onPress={() => setIsRegistering(!isRegistering)}>
-          <Text style={styles.linkText}>{isRegistering ? 'Back to Login' : 'Create an Account'}</Text>
+          <Text style={styles.linkText}>{isRegistering ? 'Volver a iniciar' : 'Crear cuenta'}</Text>
         </TouchableOpacity>
       </View>
     </View>
