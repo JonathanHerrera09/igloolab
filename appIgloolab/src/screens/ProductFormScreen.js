@@ -34,14 +34,14 @@ const ProductFormScreen = ({ route, navigation }) => {
           productData, 
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        Alert.alert('Success', 'Product updated');
+        Alert.alert('Success', 'Producto actualizado');
       } else {
         await axios.post(
           'http://localhost:3000/products', 
           productData, 
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        Alert.alert('Success', 'Product created');
+        Alert.alert('Success', 'Producto creado');
       }
         setName('');
         setDescription('');
@@ -49,7 +49,7 @@ const ProductFormScreen = ({ route, navigation }) => {
         navigation.setParams({ product: null });
       navigation.goBack();
     } catch (error) {
-      Alert.alert('Error', 'Failed to save product');
+      Alert.alert('Error', 'Fallo');
     }
   };
 
@@ -62,19 +62,19 @@ const ProductFormScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Name</Text>
+      <Text style={styles.label}>Nombre</Text>
       <TextInput 
         style={styles.input} 
         value={name} 
         onChangeText={setName} 
       />
-      <Text style={styles.label}>Description</Text>
+      <Text style={styles.label}>Decripcion</Text>
       <TextInput 
         style={styles.input} 
         value={description} 
         onChangeText={setDescription} 
       />
-      <Text style={styles.label}>Price</Text>
+      <Text style={styles.label}>Precio</Text>
       <TextInput 
         style={styles.input} 
         value={price} 
@@ -82,11 +82,11 @@ const ProductFormScreen = ({ route, navigation }) => {
         keyboardType="numeric" 
       />
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-        <Text style={styles.buttonText}>{product ? 'Update' : 'Create'}</Text>
+        <Text style={styles.buttonText}>{product ? 'Actualizar' : 'Crear'}</Text>
       </TouchableOpacity>
       {product ? (
         <TouchableOpacity style={styles.newButton} onPress={handleNew}>
-          <Text style={styles.buttonText}>New</Text>
+          <Text style={styles.buttonText}>Nuevo</Text>
         </TouchableOpacity>
       ) : null}
     </View>
