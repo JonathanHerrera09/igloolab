@@ -1,10 +1,10 @@
 .login-container {
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
-    background-color: #f8f9fa; /* Color de fondo */
+    height: 100vh; 
+    background-color: #f8f9fa; 
   }
   
   .image-column {
-    background-image: url('https://via.placeholder.com/800'); /* Imagen de fondo */
+    background-image: url('https://via.placeholder.com/800');
     background-size: cover;
     background-position: center;
     position: relative;
