@@ -19,7 +19,7 @@ export const updateProduct = async (req: Request, res: Response) => {
     const product = await Product.findByPk(id);
     if (!product) {
       res.status(404).json({ message: "Producto no encontrado" });
-      return; // Se detiene la ejecución después de enviar la respuesta
+      return;
     }
 
     await product.update({ name, price, description });
@@ -29,7 +29,6 @@ export const updateProduct = async (req: Request, res: Response) => {
   }
 };
 
-// Eliminar un producto
 export const deleteProduct = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
