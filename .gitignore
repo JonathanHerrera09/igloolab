@@ -1,0 +1,6 @@
+# Ignorar todas las carpetas node_modules dentro de cualquier subcarpeta
+**/node_modules/
+
+# Opcionalmente, también puedes ignorar archivos de dependencias
+**/package-lock.json
+**/yarn.lock

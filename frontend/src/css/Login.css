@@ -1,0 +1,65 @@
+.login-container {
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #f8f9fa; /* Color de fondo */
+  }
+  
+  .image-column {
+    background-image: url('https://via.placeholder.com/800'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .image-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .image-overlay p {
+    font-size: 1.5rem;
+  }
+  
+  .form-column {
+    padding: 20px;
+  }
+  
+  .form-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-card h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .form-card .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .form-card .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-card .btn-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .form-card .btn-link:hover {
+    text-decoration: underline;
+  }
