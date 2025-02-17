@@ -8,15 +8,15 @@ const LogoutScreen = ({ navigation }) => {
       await AsyncStorage.removeItem('token');
       navigation.navigate('Login');
     } catch (error) {
-      Alert.alert('Error', 'Failed to logout');
+      Alert.alert('Error', 'Fallo al salir');
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Are you sure you want to logout?</Text>
+      <Text style={styles.text}>¿Estás seguro de que deseas cerrar sesión??</Text>
       <TouchableOpacity style={styles.button} onPress={handleLogout}>
-        <Text style={styles.buttonText}>Logout</Text>
+        <Text style={styles.buttonText}>Salir</Text>
       </TouchableOpacity>
     </View>
   );
